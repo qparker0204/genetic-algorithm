@@ -1,0 +1,13 @@
+####################
+# Compiled Classes #
+####################
+bin/
+*.class
+
+#########################
+# Eclipse Project Files #
+#########################
+.classpath
+.project
+.settings
+
