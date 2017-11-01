@@ -61,6 +61,7 @@ public class DNA {
 		for (int i = 0; i < this.genes.length; i++) {
 			if (rand.nextFloat() < mutationRate) {
 				this.genes[i] = (char)(rand.nextInt(128-32) + 32);
+//				System.out.println("HERE");
 			}
 		}
 	}

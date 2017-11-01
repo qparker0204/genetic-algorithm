@@ -21,7 +21,7 @@ public class Runner {
 		System.out.print("Enter initial population count: ");
 		this.popCount = scan.nextInt();
 		System.out.print("Enter mutation rate (number out of 100): ");
-		this.mutationRate = scan.nextInt() / 100;
+		this.mutationRate = scan.nextFloat() / 100;
 		scan.close();
 	}
 	
@@ -40,6 +40,7 @@ public class Runner {
 	public void setup(int length) {
 		for (int i = 0; i < population.length; i++) {
 			population[i] = new DNA(length);
+//			System.out.println(population[i].getPhrase());
 		}
 	}
 	public static void main(String[] args) {
@@ -63,7 +64,7 @@ public class Runner {
 			
 			List<DNA> matingPool = new ArrayList<DNA>();
 			for (int i = 0; i < population.length; i++) {
-				int n = (int)(population[i].getFitness() * 100);
+				int n = 1 + (int)(population[i].getFitness() * 100);
 				for (int j = 0; j < n; j++) {
 					matingPool.add(population[i]);
 				}
