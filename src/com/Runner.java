@@ -54,6 +54,7 @@ public class Runner {
 		runner.setup(targetLength);
 		
 		int generations = 0;
+		float totalFitness = 0;
 		boolean done = false;
 		while (!done) {
 			generations ++;
@@ -65,6 +66,7 @@ public class Runner {
 			List<DNA> matingPool = new ArrayList<DNA>();
 			for (int i = 0; i < population.length; i++) {
 				int n = 1 + (int)(population[i].getFitness() * 100);
+				totalFitness += population[i].getFitness();
 				for (int j = 0; j < n; j++) {
 					matingPool.add(population[i]);
 				}
@@ -90,7 +92,9 @@ public class Runner {
 				}
 			}
 		}
+		float averageFitness = (totalFitness) / (generations * population.length); 
 		System.out.println("Generations: " + generations);
+		System.out.println("Average Fitness: " + averageFitness);
 		
 	}
 }
